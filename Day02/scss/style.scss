@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+@mixin flexMiddle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexSpace {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.l-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    &__logo {
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+        @include flexMiddle()
+    }
+
+    &__menu {
+        margin-top: 5px;
+
+        ul {
+            @include flexSpace()
+        }
+
+        li {
+            @include flexMiddle();
+            border: 1px solid white;
+            padding: 20px;
+            width: calc(100% / 3);
+            background-color: #ff8c00;
+
+        }
+
+        a {
+            color: #000;
+        }
+    }
+}
+
+.l-wrap-inner {
+    width: 80%;
+    margin: auto;
+}
+
+.p-bloc {
+    &--cards {
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+
+        gap: 2.5rem 1rem;
+
+        .card-bloc {
+            //calculte
+            width: calc(100% / 3 - 1rem);
+            @include flexMiddle();
+            flex-direction: column;
+
+
+            .card-img {
+                overflow: hidden;
+            }
+
+            &__img {
+                width: 100%;
+                object-fit: cover;
+                display: block;
+                transform: scale(1);
+                transform-origin: center;
+
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            @media (max-width: 600px) {
+                width: calc(100% / 2 - 1rem);
+            }
+
+            @media (max-width: 400px) {
+                width: calc(100% / 1 - 1rem);
+            }
+        }
+    }
+
+    .c-btn {
+
+        @include flexMiddle();
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        transform: skew(150deg);
+        background-color: #ff8c00;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 1px 2px 10px #322;
+
+        &:hover {
+            background-color: #5e0a0a;
+
+            transform: scale(1.05) skew(150deg);
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+
+}
+
+.l-wrap {
+    width: 80%;
+    margin: auto;
+
+    .l-content-inner {
+        margin-top: 10px;
+    }
+
+    .faq{
+        padding: 10px;
+        &__board {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            background-color: #d35ad3;
+            padding: 20px;
+        }
+        &__ans{
+            padding: 10px;
+        }
+    }
+}
