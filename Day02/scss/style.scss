@@ -154,3 +154,12 @@
         }
     }
 }
+.l-footer {
+    .l-content{
+        width: 100%;
+        background-color: #000;
+        padding: 10px;
+        color: #fff;
+        @include flexMiddle();
+    }
+}
